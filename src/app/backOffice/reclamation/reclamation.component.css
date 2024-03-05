@@ -1,0 +1,67 @@
+/*Contact sectiom*/
+
+.content-header{
+  font-family: 'Arial Black', cursive;
+  color: #0c76ff;
+  font-size: 45px;
+}
+
+.section-content{
+  text-align: center;
+
+}
+html, body {
+  height: 100%;
+}
+
+
+#contact{
+
+  font-family: 'Teko', sans-serif;
+  padding-top: 60px;
+  width: 100%;
+  width: 100vw;
+  height: 550px;
+  height: 900px;
+  background-image: url("/assets/back/img/cc.jpg");
+  background-size: cover;
+
+  color : #000000;
+}
+.contact-section{
+  padding-top: 40px;
+}
+.contact-section .col-md-6{
+  width: 50%;
+}
+
+.form-line{
+  border-right: 1px solid #B29999;
+}
+
+.form-group{
+  margin-top: 10px;
+}
+label{
+  font-size: 1.3em;
+  line-height: 1em;
+  font-weight: normal;
+}
+.form-control{
+  font-size: 1.3em;
+  color: #080808;
+}
+textarea.form-control {
+  height: 135px;
+  /* margin-top: px;*/
+}
+
+.submit{
+  font-size: 1.1em;
+  float: right;
+  width: 150px;
+  bordure : 1px;
+  background-color: transparent;
+  color: #171616;
+
+}

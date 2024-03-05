@@ -1,0 +1,55 @@
+<div class="container-fluid">
+
+  <!-- Page Heading -->
+  <h1 class="h3 mb-2 text-gray-800">Display All Reclamations</h1>
+  <hr>
+
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Admin Table</h6>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+          <tr>
+            <th><b>ID_REC</b></th>
+            <th><b>Object</b></th>
+            <th><b>Subject</b></th>
+            <th><b>Status</b></th>
+            <th><b>Date</b></th>
+            <th><b>Discussion</b></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let reclamation of reclamations | paginate: { itemsPerPage: 10, currentPage: currentPage }" >
+            <td>{{ reclamation.idRec }}</td>
+            <td>{{ reclamation.objet }}</td>
+            <td>{{ reclamation.description }}</td>
+            <td [style.background-color]="getStatusColor(reclamation.status)">{{ reclamation.status }}</td>
+            <td>{{ reclamation.date }}</td>
+            <td>
+              <ng-container>
+                <a [routerLink]="['/discussion', reclamation.idRec]" class="btn btn-light btn-icon-split">
+            <span class="icon text-gray-600">
+              <i class="fas fa-arrow-right"></i>
+            </span>
+                  <span class="text">Start chatting</span>
+                </a>
+                &nbsp; &nbsp; &nbsp; <button  class="btn btn-secondary btn-icon-split" (click)="closeReclamation(reclamation.idRec)">Close Discussion</button>
+                &nbsp; &nbsp; &nbsp; <button class="btn btn-danger ml-2" (click)="deleteReclamation(reclamation.idRec)">Delete</button>
+              </ng-container>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+        <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+
+
+
+      </div>
+    </div>
+
+  </div></div>

@@ -1,0 +1,46 @@
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link href="https://fonts.googleapis.com/css?family=Oleo+Script:400,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Teko:400,700" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<div style="background-image: url('/assets/back/img/cc.jpg')">
+<section id="contact">
+  <div class="section-content">
+    <h1 class="section-header">Get in <span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s"> Touch with us</span></h1>
+    <h3>don't hesitate to reach out to us with any questions or concerns you may have</h3>
+  </div>
+  <div class="contact-section">
+    <div class="container">
+      <form (ngSubmit)="submitReclamation()">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Your name</label>
+            <input type="text" class="form-control" id="" placeholder=" Enter Name" >
+          </div>
+          <div class="form-group" >
+            <label>Email Address</label>
+            <input type="email" class="form-control" id="exampleInputEmail" placeholder=" Enter Email id">
+          </div>
+          <div class="form-group">
+            <label>Sujet Du reclamation</label>
+            <input type="tel" class="form-control" id="objet" placeholder=" Sujet" name="objet" [(ngModel)]="objet" (input)="checkForm()" required>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for ="description"> Message</label>
+            <textarea  class="form-control" id="description" placeholder="Enter Your Message" name="description" [(ngModel)]="description" (input)="checkForm()" required></textarea>
+          </div>
+          <div>
+
+            <button type="submit" class="btn btn-default submit" (click)="openDialog()" [disabled]="isButtonDisabled"><i class="fa fa-paper-plane" aria-hidden="true" ></i>  Send Message</button>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+</div>
